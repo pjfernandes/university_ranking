@@ -153,16 +153,20 @@
         const trace1 = {
           x: dataUff.map(d=>d.Year),
           y: dataUff.map(d=>d[metric]),
-          mode: 'lines+markers',
+          mode: 'lines+markers+text',
           name: uffName,
-          line: {dash:'solid', width:2, color:'#1f77b4'}
+          line: {dash:'solid', width:2, color:'#1f77b4'},
+          text: dataUff.map(d => d[metric].toFixed(2)),
+          textposition: 'top center'
         };
         const trace2 = {
           x: dataCmp.map(d=>d.Year),
           y: dataCmp.map(d=>d[metric]),
-          mode: 'lines+markers',
+          mode: 'lines+markers+text',
           name: compareTo,
-          line: {dash:'dash', width:2, color:'#d62728'}
+          line: {dash:'dash', width:2, color:'#d62728'},
+          text: dataUff.map(d => d[metric].toFixed(2)),
+          textposition: 'top center'
         };
 
         const layout = {
