@@ -1,37 +1,37 @@
 Rank,Name,Country,Overall,Teaching,Research Environment,Research Quality,Industry,International Outlook
-251–300,University of São Paulo,Brazil,46.4–49.4,55.9,53.5,37.0,39.5,32.7
-401–500,University of Campinas,Brazil,37.1–41.6,46.8,37.5,33.4,44.6,28.6
-601–800,Federal University of Minas Gerais,Brazil,26.0–33.4,29.3,16.8,42.5,38.3,25.4
-601–800,Federal University of Rio de Janeiro,Brazil,26.0–33.4,33.4,21.4,23.6,35.2,29.0
-601–800,Universidade Federal do Rio Grande do Sul,Brazil,26.0–33.4,31.7,14.1,40.5,48.1,24.9
-601–800,Universidade Federal de São Paulo (UNIFESP),Brazil,26.0–33.4,33.9,19.7,45.8,35.0,27.0
-601–800,Pontifical Catholic University of Rio de Janeiro (PUC-Rio),Brazil,26.0–33.4,27.0,21.8,30.6,98.2,43.5
-801–1000,University of Brasília,Brazil,19.0–25.9,22.3,13.0,25.8,37.6,30.3
-801–1000,Universidade Estadual Paulista (Unesp),Brazil,19.0–25.9,37.1,19.9,14.7,35.4,25.1
-801–1000,Universidade Federal do ABC (UFABC),Brazil,19.0–25.9,14.8,12.3,26.8,39.3,33.6
-801–1000,Universidade Federal da Bahia,Brazil,19.0–25.9,21.8,12.4,20.3,34.3,24.0
-801–1000,Federal University of Pelotas,Brazil,19.0–25.9,22.1,10.4,42.0,34.0,20.6
-801–1000,Universidade Federal de Santa Catarina,Brazil,19.0–25.9,27.1,12.0,36.1,35.6,28.1
-801–1000,Federal University of São Carlos,Brazil,19.0–25.9,26.3,13.1,15.3,40.4,23.4
-801–1000,Pontifical Catholic University of Rio Grande do Sul (PUCRS),Brazil,19.0–25.9,16.8,11.0,39.5,48.9,26.3
-1001+,Ceará State University,Brazil,9.8–18.9,16.2,7.7,8.6,34.0,16.1
-1001+,Universidade do Estado do Rio de Janeiro (UERJ),Brazil,9.8–18.9,23.0,10.7,12.1,41.4,21.0
-1001+,Universidade Estadual de Maringá,Brazil,9.8–18.9,20.7,10.0,6.4,34.4,16.0
-1001+,Universidade Estadual do Oeste do Paraná (Unioeste),Brazil,9.8–18.9,21.8,7.3,2.9,34.1,13.7
-1001+,Universidade Federal do Ceará (UFC),Brazil,9.8–18.9,22.4,9.9,21.4,36.0,24.1
-1001+,Federal University of Goiás,Brazil,9.8–18.9,18.5,9.4,13.3,37.6,18.3
-1001+,Federal University of Itajubá,Brazil,9.8–18.9,15.7,8.6,10.2,36.6,21.4
-1001+,Federal University of Lavras,Brazil,9.8–18.9,25.2,13.3,7.8,37.6,17.9
-1001+,Federal University of Pará,Brazil,9.8–18.9,16.1,9.1,9.6,34.5,23.2
-1001+,Universidade Federal do Paraná (UFPR),Brazil,9.8–18.9,19.6,11.0,10.1,34.0,20.8
-1001+,Universidade Federal de Pernambuco,Brazil,9.8–18.9,23.6,8.9,14.1,36.7,21.4
-1001+,Federal University of Rio Grande do Norte (UFRN),Brazil,9.8–18.9,18.7,8.4,16.0,41.9,22.1
-1001+,Federal University of Santa Maria,Brazil,9.8–18.9,18.4,8.4,11.4,35.8,16.5
-1001+,Federal University of Uberlândia,Brazil,9.8–18.9,23.7,9.2,9.7,34.3,16.7
-1001+,Federal University of Viçosa,Brazil,9.8–18.9,27.5,13.4,10.6,45.8,19.4
-1001+,Fluminense Federal University,Brazil,9.8–18.9,16.7,9.6,11.0,34.3,24.6
-1001+,Londrina State University,Brazil,9.8–18.9,21.3,19.5,14.0,34.0,17.5
-1001+,Pontifícia Universidade Católica do Paraná,Brazil,9.8–18.9,15.4,9.4,16.1,36.1,24.7
-1001+,State University of Ponta Grossa,Brazil,9.8–18.9,17.3,18.8,16.8,34.0,16.5
-1001+,Universidade Tecnológica Federal do Paraná (UTFPR),Brazil,9.8–18.9,14.3,8.6,7.2,36.8,18.1
-1001+,Unisinos University,Brazil,9.8–18.9,20.8,14.2,14.7,34.9,19.3
+251,University of São Paulo,Brazil,47.9,55.9,53.5,37.0,39.5,32.7
+401,University of Campinas,Brazil,39.35,46.8,37.5,33.4,44.6,28.6
+601,Federal University of Minas Gerais,Brazil,29.7,29.3,16.8,42.5,38.3,25.4
+601,Federal University of Rio de Janeiro,Brazil,29.7,33.4,21.4,23.6,35.2,29.0
+601,Universidade Federal do Rio Grande do Sul,Brazil,29.7,31.7,14.1,40.5,48.1,24.9
+601,Universidade Federal de São Paulo (UNIFESP),Brazil,29.7,33.9,19.7,45.8,35.0,27.0
+601,Pontifical Catholic University of Rio de Janeiro (PUC-Rio),Brazil,29.7,27.0,21.8,30.6,98.2,43.5
+801,University of Brasília,Brazil,22.45,22.3,13.0,25.8,37.6,30.3
+801,Universidade Estadual Paulista (Unesp),Brazil,22.45,37.1,19.9,14.7,35.4,25.1
+801,Universidade Federal do ABC (UFABC),Brazil,22.45,14.8,12.3,26.8,39.3,33.6
+801,Universidade Federal da Bahia,Brazil,22.45,21.8,12.4,20.3,34.3,24.0
+801,Federal University of Pelotas,Brazil,22.45,22.1,10.4,42.0,34.0,20.6
+801,Universidade Federal de Santa Catarina,Brazil,22.45,27.1,12.0,36.1,35.6,28.1
+801,Federal University of São Carlos,Brazil,22.45,26.3,13.1,15.3,40.4,23.4
+801,Pontifical Catholic University of Rio Grande do Sul (PUCRS),Brazil,22.45,16.8,11.0,39.5,48.9,26.3
+1001,Ceará State University,Brazil,14.35,16.2,7.7,8.6,34.0,16.1
+1001,Universidade do Estado do Rio de Janeiro (UERJ),Brazil,14.35,23.0,10.7,12.1,41.4,21.0
+1001,Universidade Estadual de Maringá,Brazil,14.35,20.7,10.0,6.4,34.4,16.0
+1001,Universidade Estadual do Oeste do Paraná (Unioeste),Brazil,14.35,21.8,7.3,2.9,34.1,13.7
+1001,Universidade Federal do Ceará (UFC),Brazil,14.35,22.4,9.9,21.4,36.0,24.1
+1001,Federal University of Goiás,Brazil,14.35,18.5,9.4,13.3,37.6,18.3
+1001,Federal University of Itajubá,Brazil,14.35,15.7,8.6,10.2,36.6,21.4
+1001,Federal University of Lavras,Brazil,14.35,25.2,13.3,7.8,37.6,17.9
+1001,Federal University of Pará,Brazil,14.35,16.1,9.1,9.6,34.5,23.2
+1001,Universidade Federal do Paraná (UFPR),Brazil,14.35,19.6,11.0,10.1,34.0,20.8
+1001,Universidade Federal de Pernambuco,Brazil,14.35,23.6,8.9,14.1,36.7,21.4
+1001,Federal University of Rio Grande do Norte (UFRN),Brazil,14.35,18.7,8.4,16.0,41.9,22.1
+1001,Federal University of Santa Maria,Brazil,14.35,18.4,8.4,11.4,35.8,16.5
+1001,Federal University of Uberlândia,Brazil,14.35,23.7,9.2,9.7,34.3,16.7
+1001,Federal University of Viçosa,Brazil,14.35,27.5,13.4,10.6,45.8,19.4
+1001,Fluminense Federal University,Brazil,14.35,16.7,9.6,11.0,34.3,24.6
+1001,Londrina State University,Brazil,14.35,21.3,19.5,14.0,34.0,17.5
+1001,Pontifícia Universidade Católica do Paraná,Brazil,14.35,15.4,9.4,16.1,36.1,24.7
+1001,State University of Ponta Grossa,Brazil,14.35,17.3,18.8,16.8,34.0,16.5
+1001,Universidade Tecnológica Federal do Paraná (UTFPR),Brazil,14.35,14.3,8.6,7.2,36.8,18.1
+1001,Unisinos University,Brazil,14.35,20.8,14.2,14.7,34.9,19.3
