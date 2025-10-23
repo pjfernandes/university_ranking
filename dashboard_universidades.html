@@ -143,31 +143,86 @@
           return d && !isNaN(d[metric]) ? d[metric] : null;
         });
 
-          const trace1 = {
+        const trace1 = {
           x: allYears,
           y: uffY,
-          mode: 'lines+markers+text',
+          mode: 'lines+markers',
           name: uffName,
           line: { dash: 'solid', width: 2, color: '#1f77b4' },
-          text: uffY.map(v => (v !== null && v !== undefined ? v.toFixed(2) : '')),
-          textposition: 'top center',
-          textfont: { size: 10, color: '#000' }
+          marker: { size: 6 },
+          hoverinfo: 'none',
+          showlegend: true
         };
-          const trace2 = {
-          x: allYears, y: cmpY,
-          mode:'lines+markers+text', name: compareTo,
-          line:{dash:'dash', width:2, color:'#d62728'},
-          text: cmpY.map(v=>v?v.toFixed(2):''), textposition:'top center'
+
+        const trace2 = {
+          x: allYears,
+          y: cmpY,
+          mode: 'lines+markers',
+          name: compareTo,
+          line: { dash: 'dash', width: 2, color: '#d62728' },
+          marker: { size: 6 },
+          hoverinfo: 'none',
+          showlegend: true
         };
+
+        const annotations = [];
+
+        allYears.forEach((year, i) => {
+          if (uffY[i] !== null && uffY[i] !== undefined) {
+            annotations.push({
+              x: year,
+              y: uffY[i],
+              text: uffY[i].toFixed(2),
+              showarrow: false,
+              font: { size: 10, color: '#000' },
+              yanchor: 'bottom'
+            });
+          }
+          if (cmpY[i] !== null && cmpY[i] !== undefined) {
+            annotations.push({
+              x: year,
+              y: cmpY[i],
+              text: cmpY[i].toFixed(2),
+              showarrow: false,
+              font: { size: 10, color: '#000' },
+              yanchor: 'bottom'
+            });
+          }
+        });
 
         const layout = {
-          margin:{t:30,r:20,l:50,b:40},
-          xaxis:{title:'Year', dtick:1, tickmode:'linear', range:[2018.5,2026.5]},
-          yaxis:{title:metric},
-          title: { text: '' } 
+          margin: { t: 60, r: 60, l: 70, b: 60 },
+          xaxis: {
+            title: 'Year',
+            dtick: 1,
+            tickmode: 'linear',
+             range: [2018.8, 2026.2],
+            fixedrange: true,
+            automargin: true
+          },
+          yaxis: {
+            title: metric,
+            automargin: true
+          },
+          title: { text: '' },
+          annotations: annotations,
+          legend: {
+            x: 0,
+            y: 1.15,
+            orientation: 'h'
+          }
         };
 
-        Plotly.newPlot(plotDiv,[trace1,trace2],layout,{responsive:true});
+        Plotly.newPlot(plotDiv, [trace1, trace2], layout, {
+          responsive: true,
+          displaylogo: false,
+          toImageButtonOptions: {
+            format: 'png',
+            filename: 'university_comparison',
+            scale: 2
+          }
+        });
+
       });
     }
 
