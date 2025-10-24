@@ -126,7 +126,7 @@
 
     function renderFor(compareTo){
       chartsDiv.innerHTML = '';
-      const allYears = Array.from({length: 2026 - 2019 + 1}, (_,i)=>2019+i);
+      const allYears = Array.from({length: 2026 - 2017 + 1}, (_,i)=>2017+i);
 
       numericCols.forEach(metric => {
         const card = document.createElement('div'); card.className='chart-card';
@@ -200,7 +200,7 @@
             title: 'Year',
             dtick: 1,
             tickmode: 'linear',
-             range: [2018.8, 2026.2],
+             range: [2016.8, 2026.2],
             fixedrange: true,
             automargin: true
           },
