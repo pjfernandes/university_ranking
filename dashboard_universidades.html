@@ -27,6 +27,19 @@
     <button id="refreshBtn">Refresh</button>
     <span id="status">Loading data...</span>
   </div>
+  
+  <div style="padding-bottom: 10px"> 
+    <label>Start:
+      <select id="minYear"></select>
+    </label>
+
+    <label>End:
+      <select id="maxYear"></select>
+    </label>
+
+    <button id="applyFilter">Update</button>
+  </div>
+
 
   <div id="charts" class="grid"></div>
 
@@ -50,7 +63,7 @@
   </footer>
 
 <script>
-(async function(){
+  (async function(){
   const urls = [
     {url: "https://raw.githubusercontent.com/pjfernandes/university_ranking/refs/heads/main/the_2017_full.csv", year: 2017},
     {url: "https://raw.githubusercontent.com/pjfernandes/university_ranking/refs/heads/main/the_2018_full.csv", year: 2018},
@@ -72,6 +85,9 @@
 
   const numericCols = ["Teaching","Research Environment","Research Quality","Industry","International Outlook"];
   const uffName = "Fluminense Federal University";
+
+  const minYearSelect = document.getElementById("minYear");
+  const maxYearSelect = document.getElementById("maxYear");
 
   function parseNumber(v){
     if(v === null || v === undefined) return NaN;
@@ -105,7 +121,7 @@
       const o = document.createElement('option'); o.value = n; o.textContent = n; compareSelect.appendChild(o);
     });
 
-    // tabela amostral
+    // Popular tabela amostral
     const sampleRows = brazil.slice(0, 10);
     let html = '<table class="table-sample"><thead><tr>';
     ["Name","Country","Year"].concat(numericCols).forEach(h=> html += `<th>${h}</th>`);
@@ -124,9 +140,24 @@
 
     statusEl.textContent = 'Ready';
 
+    const start = 2017;
+    const end = 2026;
+
+    for (let y = start; y <= end; y++) {
+      minYearSelect.add(new Option(y, y));
+      maxYearSelect.add(new Option(y, y));
+    }
+
+    minYearSelect.value = 2017;
+    maxYearSelect.value = 2026;
+
     function renderFor(compareTo){
       chartsDiv.innerHTML = '';
-      const allYears = Array.from({length: 2026 - 2017 + 1}, (_,i)=>2017+i);
+
+      const minY = parseInt(minYearSelect.value);
+      const maxY = parseInt(maxYearSelect.value);
+
+      const allYears = Array.from({length: maxY - minY + 1}, (_,i)=>minY + i);
 
       numericCols.forEach(metric => {
         const card = document.createElement('div'); card.className='chart-card';
@@ -152,7 +183,7 @@
           y: uffY,
           mode: 'lines+markers',
           name: uffName,
-          line: { dash: 'solid', width: 2, color: '#1f77b4' },
+          line: { dash: 'solid', width: 2 },
           marker: { size: 6 },
           hoverinfo: 'none',
           showlegend: true
@@ -163,34 +194,19 @@
           y: cmpY,
           mode: 'lines+markers',
           name: compareTo,
-          line: { dash: 'dash', width: 2, color: '#d62728' },
+          line: { dash: 'dash', width: 2 },
           marker: { size: 6 },
           hoverinfo: 'none',
           showlegend: true
         };
 
         const annotations = [];
-
         allYears.forEach((year, i) => {
-          if (uffY[i] !== null && uffY[i] !== undefined) {
-            annotations.push({
-              x: year,
-              y: uffY[i],
-              text: uffY[i].toFixed(2),
-              showarrow: false,
-              font: { size: 10, color: '#000' },
-              yanchor: 'bottom'
-            });
+          if (uffY[i] != null) {
+            annotations.push({ x: year, y: uffY[i], text: uffY[i].toFixed(2), showarrow: false, font: { size: 10 }, yanchor: 'bottom' });
           }
-          if (cmpY[i] !== null && cmpY[i] !== undefined) {
-            annotations.push({
-              x: year,
-              y: cmpY[i],
-              text: cmpY[i].toFixed(2),
-              showarrow: false,
-              font: { size: 10, color: '#000' },
-              yanchor: 'bottom'
-            });
+          if (cmpY[i] != null) {
+            annotations.push({ x: year, y: cmpY[i], text: cmpY[i].toFixed(2), showarrow: false, font: { size: 10 }, yanchor: 'bottom' });
           }
         });
 
@@ -200,15 +216,12 @@
             title: 'Year',
             dtick: 1,
             tickmode: 'linear',
-             range: [2016.8, 2026.2],
-            fixedrange: true,
             automargin: true
           },
           yaxis: {
             title: metric,
             automargin: true
           },
-          title: { text: '' },
           annotations: annotations,
           legend: {
             x: 0,
@@ -222,27 +235,42 @@
           displaylogo: false,
           toImageButtonOptions: {
             format: 'png',
-            filename: 'university_comparison',
+            filename: `university_comparison_${metric}`,
             scale: 2
           }
         });
-
       });
     }
 
-    if(compareSelect.options.length>0){
-      renderFor(compareSelect.options[0].value);
-      compareSelect.value = compareSelect.options[0].value;
+    let compareToGlobal = compareSelect.options[0]?.value;
+    if(compareToGlobal){
+      renderFor(compareToGlobal);
+      compareSelect.value = compareToGlobal;
     }
 
-    compareSelect.addEventListener('change', e=>renderFor(e.target.value));
+    compareSelect.addEventListener('change', e=>{
+      compareToGlobal = e.target.value;
+      renderFor(compareToGlobal);
+    });
+
     refreshBtn.addEventListener('click', ()=>location.reload());
+
+    document.getElementById("applyFilter").addEventListener("click", () => {
+      const minY = parseInt(minYearSelect.value);
+      const maxY = parseInt(maxYearSelect.value);
+      if(minY > maxY){
+        alert("O ano inicial deve ser menor ou igual ao ano final.");
+        return;
+      }
+      renderFor(compareToGlobal);
+    });
 
   } catch(err){
     statusEl.textContent = 'Error: ' + err.message;
     console.error(err);
   }
 })();
+
 </script>
 </body>
 </html>
