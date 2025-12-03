@@ -230,7 +230,22 @@
           }
         };
 
-        Plotly.newPlot(plotDiv, [trace1, trace2], layout, {
+        // Plotly.newPlot(plotDiv, [trace1, trace2], layout, {
+        //   responsive: true,
+        //   displaylogo: false,
+        //   toImageButtonOptions: {
+        //     format: 'png',
+        //     filename: `university_comparison_${metric}`,
+        //     scale: 2
+        //   }
+        // });
+        const traces = [trace1];
+
+        if (compareTo && compareTo !== uffName) {
+          traces.push(trace2);
+        }
+
+        Plotly.newPlot(plotDiv, traces, layout, {
           responsive: true,
           displaylogo: false,
           toImageButtonOptions: {
@@ -239,14 +254,20 @@
             scale: 2
           }
         });
+
       });
     }
 
-    let compareToGlobal = compareSelect.options[0]?.value;
-    if(compareToGlobal){
-      renderFor(compareToGlobal);
-      compareSelect.value = compareToGlobal;
-    }
+    //let compareToGlobal = compareSelect.options[0]?.value;
+    //if(compareToGlobal){
+    //  renderFor(compareToGlobal);
+    //  compareSelect.value = compareToGlobal;
+    //}
+
+    let compareToGlobal = uffName;
+    compareSelect.value = ""; 
+    renderFor(uffName);
+
 
     compareSelect.addEventListener('change', e=>{
       compareToGlobal = e.target.value;
